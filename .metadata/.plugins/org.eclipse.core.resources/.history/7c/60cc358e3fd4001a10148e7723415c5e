@@ -1,0 +1,15 @@
+package mockitoCourse;
+
+import static org.mockito.Mockito.mock;
+
+import org.junit.Test;
+
+public class TodoBusinessImplMockitoTest {
+
+	@Test
+	public void testTodoBusinessImplMockitoTest_Mockito() {
+		TodoService todoServiceMock= mock(TodoService.class);
+		
+	}
+
+}

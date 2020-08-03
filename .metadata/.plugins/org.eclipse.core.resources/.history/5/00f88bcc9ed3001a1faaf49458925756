@@ -1,0 +1,81 @@
+package javaFX11;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class ConvertNumbers extends Application {
+
+	@Override
+	public void start(Stage primaryStage) throws Exception{
+	
+	//
+	GridPane pane = new GridPane();
+	pane.setAlignment(Pos.CENTER);
+	pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
+	pane.setHgap(5.5);
+	pane.setVgap(5.5);
+	
+	//place nodes in plane
+	pane.add(new Label("Decimal:"), 0, 0);
+	TextField tfdec = new TextField();
+	TextField tfhex = new TextField();
+	TextField tfbin = new TextField();
+	pane.add(tfdec, 1, 0);
+	pane.add(new Label("Hex:"), 0, 1);
+	pane.add(tfhex, 1, 1);
+	pane.add(new Label("Binary:"), 0, 2);
+	pane.add(tfbin, 1, 2);
+	
+	
+	tfdec.setOnKeyPressed(e->{
+		//dec to hex
+		if(e.getCode()==KeyCode.ENTER) {
+			int dec = Integer.parseInt(tfdec.getText());
+			String dtoh = Integer.toHexString(dec);
+			String dtob = Integer.toBinaryString(dec);
+			
+			tfhex.setText(String.format(dtoh));
+			tfbin.setText(String.format(dtob));
+		}
+	});
+	
+	tfhex.setOnKeyPressed(e->{
+		// hex to deec
+		if(e.getCode()==KeyCode.ENTER) {
+			int hex = Integer.parseInt(tfhex.getText(),16);
+			String htod = Integer.toString(hex);
+			String htob = Integer.toBinaryString(hex);
+			
+			tfhex.setText(htod);
+			tfbin.setText(String.format(htob));
+		}
+	});
+	
+	tfhex.setOnKeyPressed(e->{
+		//binary to hex
+		if(e.getCode()==KeyCode.ENTER) {
+			int bin = Integer.parseInt(tfbin.getText(),2);
+			String btod = Integer.toString(bin);
+			String btob = Integer.toHexString(bin);
+			
+			tfdec.setText(btod);
+			tfhex.set(String.format(btoh));
+		}
+	});
+	//
+	Scene scene = new Scene(pane);
+	primaryStage.setTitle("Excercise16_05");
+	primaryStage.setScene(scene);
+	primaryStage.show();
+	pane.requestFocus();
+}
+
+	
+}

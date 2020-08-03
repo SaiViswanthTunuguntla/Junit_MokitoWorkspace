@@ -1,0 +1,12 @@
+package mockitoCourse;
+
+import org.junit.Test;
+
+public class TodoBusinessImplMockitoTest {
+
+	@Test
+	public void testTodoBusinessImplMockitoTest_Mockito() {
+		
+	}
+
+}

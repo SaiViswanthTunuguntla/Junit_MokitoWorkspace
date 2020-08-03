@@ -1,0 +1,7 @@
+package com.mockito.testing.RestServicesTesting.controllers;
+
+@org.springframework.web.bind.annotation.RestController
+public class RestController {
+	
+
+}

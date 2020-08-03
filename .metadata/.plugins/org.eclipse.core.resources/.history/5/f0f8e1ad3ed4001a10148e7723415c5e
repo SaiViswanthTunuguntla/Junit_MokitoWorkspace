@@ -1,0 +1,14 @@
+package mockitoCourse;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TodoBusinessImplMockitoTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

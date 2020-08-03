@@ -1,0 +1,5 @@
+package com.mockito.testing.RestServicesTesting.controllers;
+
+public class RestController {
+
+}
